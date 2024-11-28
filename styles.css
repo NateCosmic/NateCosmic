@@ -89,7 +89,7 @@ canvas {
   background-color: #6A0DAD;
 }
 
-/* Alternate theme */
+/* Dark theme (pink background) */
 .dark-theme {
   background-color: pink !important;
   color: lightpink !important;
@@ -97,4 +97,14 @@ canvas {
 
 .dark-theme canvas {
   background-color: darkgray !important;
+}
+
+/* New Blue theme (light blue background) */
+.blue-theme {
+  background-color: lightblue !important;
+  color: white !important;
+}
+
+.blue-theme canvas {
+  background-color: darkblue !important;
 }
