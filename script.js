@@ -55,11 +55,17 @@ Particle.prototype.draw = function () {
   ctx.fillRect(this.x, this.y, this.size, this.size);
 };
 
+// Updated createParticles function with a random spread
 function createParticles(e) {
   const xPos = e.x;
   const yPos = e.y;
-  for (let i = 0; i < 10; i++) {
-    particles.push(new Particle(xPos, yPos));
+  const particleCount = 10;
+
+  for (let i = 0; i < particleCount; i++) {
+    // Randomize the spread of particles around the cursor position
+    const offsetX = Math.random() * 20 - 10; // Random offset within a -10 to 10 range
+    const offsetY = Math.random() * 20 - 10; // Random offset within a -10 to 10 range
+    particles.push(new Particle(xPos + offsetX, yPos + offsetY));
   }
 }
 
