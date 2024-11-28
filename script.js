@@ -1,6 +1,9 @@
 // Global variable for particle color
 let particleColor = "white";
 
+// Track the current theme (1 = default, 2 = dark theme, 3 = blue theme)
+let currentTheme = 1;
+
 // Toggle Features Menu visibility
 function toggleFeatures() {
   const menu = document.getElementById('features-menu');
@@ -11,16 +14,32 @@ function toggleFeatures() {
 function toggleTheme() {
   const body = document.body;
   const canvas = document.getElementById("background-canvas");
-  const currentClass = body.classList.contains('dark-theme');
 
-  if (currentClass) {
-    body.classList.remove('dark-theme');
-    particleColor = "white"; // Default color for particles
-    canvas.style.backgroundColor = '';  // Reset to default canvas color
-  } else {
+  // Remove all theme classes
+  body.classList.remove('dark-theme', 'blue-theme');
+  canvas.style.backgroundColor = '';
+
+  // Cycle through themes
+  currentTheme++;
+  if (currentTheme > 3) {
+    currentTheme = 1;
+  }
+
+  if (currentTheme === 1) {
+    // Default theme (black background, white dots)
+    body.classList.remove('blue-theme', 'dark-theme');
+    particleColor = "white";  // Default particle color
+    canvas.style.backgroundColor = 'black';  // Default canvas color
+  } else if (currentTheme === 2) {
+    // Dark theme (pink background, dark gray dots)
     body.classList.add('dark-theme');
-    particleColor = "darkgray"; // Change particle color to dark when the theme is pink
-    canvas.style.backgroundColor = 'darkgray';  // Set canvas background to darkgray
+    particleColor = "darkgray"; // Dark gray dots
+    canvas.style.backgroundColor = 'darkgray';  // Dark canvas color
+  } else if (currentTheme === 3) {
+    // Blue theme (light blue background, dark blue dots)
+    body.classList.add('blue-theme');
+    particleColor = "darkblue"; // Dark blue dots
+    canvas.style.backgroundColor = 'darkblue';  // Dark blue canvas color
   }
 }
 
@@ -55,11 +74,9 @@ Particle.prototype.draw = function () {
   ctx.fillRect(this.x, this.y, this.size, this.size);
 };
 
-// Updated createParticles function with a random spread
 function createParticles(e) {
-  // Get random positions across the canvas
-  const xPos = Math.random() * canvas.width;
-  const yPos = Math.random() * canvas.height;
+  const xPos = e.x;
+  const yPos = e.y;
   const particleCount = 10;
 
   for (let i = 0; i < particleCount; i++) {
