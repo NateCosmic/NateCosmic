@@ -21,6 +21,20 @@ function createDots(count) {
   }
 }
 
+// Toggle theme (background, text, and dots)
+function toggleTheme() {
+  const body = document.body;
+  const canvas = document.getElementById("background-canvas");
+  const currentClass = body.classList.contains('dark-theme');
+
+  if (currentClass) {
+    body.classList.remove('dark-theme');
+    canvas.style.backgroundColor = '';  // reset to default
+  } else {
+    body.classList.add('dark-theme');
+  }
+}
+
 // Draw dots
 function drawDots() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
