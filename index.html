@@ -3,24 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Outta Luck | Nicopatty</title>
+  <title>Website</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- Top bar -->
+  <!-- Top Bar -->
   <div class="top-bar">
-    <span class="song-title">outta luck | by nicopatty</span>
-    <button class="features-button" onclick="changeDotColor()">Features</button>
+    <div class="song-title">Outta Luck | by Nicopatty WIP</div>
+    <button class="features-button" onclick="toggleFeatures()">Features</button>
+    <button class="theme-changer-button" onclick="toggleTheme()">Theme Changer</button>
   </div>
 
-  <!-- Canvas for flying dots -->
-  <canvas id="dotCanvas"></canvas>
+  <!-- Canvas for the dots -->
+  <canvas id="background-canvas"></canvas>
 
-  <!-- Background music -->
-  <audio autoplay loop>
-    <source src="https://www.youtube.com/watch?v=iXDecGkrwdM" type="audio/mp3">
-    Your browser does not support the audio element.
-  </audio>
+  <!-- Features Menu -->
+  <div id="features-menu" class="features-menu">
+    <!-- You can add options here later if you want -->
+  </div>
 
   <script src="script.js"></script>
 </body>
