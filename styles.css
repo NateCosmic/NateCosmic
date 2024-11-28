@@ -24,7 +24,8 @@ body, html {
   margin-left: 10px;
 }
 
-.features-button {
+.features-button
+.theme-changer-button {
   margin-right: 10px;
   background: none;
   border: 1px solid purple;
@@ -34,8 +35,18 @@ body, html {
   border-radius: 5px;
   transition: background 0.3s, color 0.3s;
 }
+/* Alternate theme */
+.dark-theme {
+  background-color: pink !important;
+  color: lightpink !important;
+}
 
-.features-button:hover {
+.dark-theme canvas {
+  background-color: darkgray !important;
+}
+
+.features-button:hover
+.theme-changer-butotn:hover {
   background: purple;
   color: white;
 }
