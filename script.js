@@ -57,15 +57,13 @@ Particle.prototype.draw = function () {
 
 // Updated createParticles function with a random spread
 function createParticles(e) {
-  const xPos = e.x;
-  const yPos = e.y;
+  // Get random positions across the canvas
+  const xPos = Math.random() * canvas.width;
+  const yPos = Math.random() * canvas.height;
   const particleCount = 10;
 
   for (let i = 0; i < particleCount; i++) {
-    // Randomize the spread of particles around the cursor position
-    const offsetX = Math.random() * 20 - 10; // Random offset within a -10 to 10 range
-    const offsetY = Math.random() * 20 - 10; // Random offset within a -10 to 10 range
-    particles.push(new Particle(xPos + offsetX, yPos + offsetY));
+    particles.push(new Particle(xPos, yPos));
   }
 }
 
