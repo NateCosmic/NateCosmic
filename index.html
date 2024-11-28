@@ -3,23 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Outta Luck | Nicopatty</title>
+  <title>Website</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- Top bar -->
+  <!-- Top Bar -->
   <div class="top-bar">
-    <span class="song-title">outta luck | by nicopatty</span>
-    <button class="features-button" onclick="changeDotColor()">Features</button>
+    <div class="song-title">Outta Luck | by Nicopatty WIP</div>
+    <button class="features-button" onclick="toggleFeatures()">Features</button>
   </div>
 
-  <!-- Canvas for flying dots -->
-  <canvas id="dotCanvas"></canvas>
+  <!-- Canvas for the dots -->
+  <canvas id="background-canvas"></canvas>
 
-  <!-- Background music -->
-  <audio autoplay loop>
-  <source src="nate.mp3" type="audio/mpeg">
-  <audio>
+  <!-- Features Menu -->
+  <div id="features-menu" class="features-menu">
+    <div class="menu-title">Settings</div>
+    <button class="menu-option">Room</button>
+    <button class="menu-option">Safety</button>
+    <button class="menu-option">Movement</button>
+    <button class="menu-option">Fun/Misc</button>
+    <button class="menu-option">World</button>
+    <button class="menu-option">Advantage</button>
+  </div>
 
   <script src="script.js"></script>
 </body>
