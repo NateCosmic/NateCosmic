@@ -53,40 +53,45 @@ canvas {
 }
 
 /* Features menu styling */
+/* Features menu styling */
 .features-menu {
-  display: none; /* Initially hidden */
+  display: none; /* Hidden by default */
   position: fixed;
-  top: 20%;
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, -50%);
   background-color: purple;
   width: 300px;
   padding: 20px;
   border-radius: 10px;
   color: white;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  z-index: 1000; /* Ensure it appears above other elements */
 }
 
 .features-menu .menu-title {
   font-size: 24px;
   margin-bottom: 20px;
-  text-align: center;
 }
 
 .features-menu .menu-option {
   display: block;
+  width: 90%;
+  margin: 10px auto;
+  padding: 10px;
   background: none;
-  border: none;
+  border: 1px solid white;
   color: white;
   font-size: 18px;
-  padding: 10px;
-  text-align: left;
+  border-radius: 5px;
   cursor: pointer;
-  width: 100%;
+  transition: background 0.3s, color 0.3s;
 }
 
 .features-menu .menu-option:hover {
-  background-color: #6A0DAD;
+  background: white;
+  color: purple;
 }
 
 /* Dark theme (pink background) */
