@@ -6,9 +6,11 @@ let currentTheme = 1;
 
 // Toggle Features Menu visibility
 function toggleFeatures() {
-  const menu = document.getElementById('features-menu');
-  menu.classList.toggle('show');
+  const menu = document.getElementById("features-menu");
+  menu.style.display = menu.style.display === "none" || !menu.style.display ? "block" : "none";
 }
+
+document.querySelector(".features-button").addEventListener("click", toggleFeatures);
 
 // Toggle theme (background, text, and dots)
 function toggleTheme() {
