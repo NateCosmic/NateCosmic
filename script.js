@@ -8,9 +8,10 @@ let currentTheme = 1;
 function toggleFeatures() {
   const menu = document.getElementById("features-menu");
   menu.style.display = menu.style.display === "none" || !menu.style.display ? "block" : "none";
+  document.querySelector(".features-button").addEventListener("click", toggleFeatures);
 }
 
-document.querySelector(".features-button").addEventListener("click", toggleFeatures);
+
 
 // Toggle theme (background, text, and dots)
 function toggleTheme() {
